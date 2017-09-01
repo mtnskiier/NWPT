@@ -1,0 +1,9 @@
+<p>To use: Input English text in the input box and press "Submit Text" to get the prediction. </p>
+
+<p>The Next Word Prediction Tool takes a set of words as inputs and predicts the next word in an English sentence. The predictions are based on a large collection of English from blogs, news, and twitter.</p>
+
+<p>The "Word Cloud" tab shows the prediction words varying by size to indicate likelyhood.</p>
+
+<p>The "Usage" tab gives short instructions on how to use the tool.</p>
+
+<p>The "Overview" tab has a brief overview of the data used in the prediction process and the process itself.</p>

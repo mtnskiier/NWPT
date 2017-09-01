@@ -1,0 +1,10 @@
+<p>The Next Word Prediction Tool is an application of the genre of Natural Language Processing. Using a large corpus of English language from SwiftKey and Johns Hopkins University, consecutive word patterns of varying lengths are created and the number of instances are counted. These counts are then used to create a "Maximum Likelyhood Estimate" for a given phrase and determine the relative order and the "score" displayed in the application. </p>
+
+<p>Slang and colliquial terms were captured intact and are a part of the model. This is strictly a design choice and the algorithms can be easily modified to accept and predict ONLY correctly spelled words and proper English. Some egregious profanities have been removed - but since this is subjective, your tolerance may be challenged.</p>
+
+<p>Accuracy of this approach has been measured on an independent data set to be in the 16-20% range for exact matches and 29-37% in the top five matches.</p>
+
+<p>Performance of the algorithm was measured to be under a second for all test cases. Most inputs over 3 words are processed in 260 milliseconds on an average laptop.</p>
+
+
+Feedback can be directed to: <a>jim@starluna.com</a>
