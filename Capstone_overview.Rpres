@@ -1,0 +1,82 @@
+
+JHU Data Science Specialization Capstone
+========================================================
+author: Jim Baker  - jim@starluna.com
+date: September 1st, 2017
+autosize: true
+
+# Predicting the next word in written English   
+
+
+Program and Capstone sponsor  
+<img src="JHU-Logo.png" style="background-color:transparent; border:0px; box-shadow:none;"></img>
+
+Data source provider and project motivation   
+<img src="swiftkey.png" style="background-color:transparent; border:0px; box-shadow:none;"></img>
+
+
+
+Why is predicting the next word an interesting problem?
+========================================================
+
+Potential uses of the predictions:
+
+- Natural language manipulation opens the door for more natural computer interfaces
+- Handicap access - picking potential words from a list is easier than character-by-character spelling
+- General ease of use improvements for all users
+- Prediction can be used for chatbots and other computer/human interactions
+
+Prediction combined with learning from expert user inputs would greatly increase new learner proficiency when using smaller, well defined grammars (eg. SQL).
+
+Natural language processing is growing at over [16% Compunded Annual Growth Rate](http://www.marketsandmarkets.com/PressReleases/natural-language-processing-nlp.asp) and is projected to achieve $16B Total Addressable Market in the next 4 years.
+
+
+Introducing: Next Word Prediction Tool
+========================================================
+## Prediction Model 
+- Blogs, news, and twitter content provided by Swiftkey was the primary corpus
+  + Some egregious curse words filtered out
+  + Slang and colloquial terms left intact
+  + Single occurance terms removed
+  
+## Prediction process
+- Words in the corpus grouped into 1,2,3,4 sequential word groups (aka n-grams)
+- Frequency of occurance of each n-gram counted
+- Maximum Likelyhood Estimate (MLE) for each n-gram is used to "score" each potential next word
+- A "Simple Backoff" algorithm finds the best prediction by comparing the score of higer order n-grams against the MLE scores of lower order n-grams. Defaulting to the frequency of individual words.
+- Accuracy of this approach has been measured on an independent data set to be in the 16-20% range for exact matches and 29-37% in the top five matches in 260 milliseconds on average.
+
+## Presentation layer
+- A web application framework for R, "Shiny"" was used to create an interactive web page for the "Next Word Prediction Tool"
+- In addition to tabular results, a word cloud was generated using the "wordcloud" library.
+
+
+
+Using Next Word Prediction Tool
+========================================================
+![alt text](NWPT_screenshot.png "https://mtnskiier.shinyapps.io/nwpt_capstone/")
+***
+Use the text box just below the title to input a phrase which you'd like to predict the next word. Press the "Submit" button OR press RETURN to get the prediction. Additional information is provided in the tabs on the usage and a high-level overview of the Next Word Prediction Tool.
+
+The word cloud represents the likelyhood with the size of the text.
+
+Because slang is included, you can increase your slang-knowledge - try some fun inputs, like "fo"! 
+
+Try the applet [here!](https://mtnskiier.shinyapps.io/nwpt_capstone/)
+
+
+Future Developments
+========================================================
+
+During the course of the project, several additional areas of interest were identified. Market research should be conducted to determine the potential value of these areas:
+- Dictionary only mode - slightly slower run-time performance and increased image size
+- Age specific corpus - segmenting the prediction model inputs by age-groups could create a more engaging user experience
+- "Teach mode" - add phrases to the prediction model based on prediction inputs
+- Visual "learn mode" - foreign language "learn mode" shows possible sentences to aspiring language learners.
+- Expanded corpus - several additional sources of corpus could improve the prediction capabilities
+- Minimize the run-time footprint - hashing of the n-grams is estimated to reduce the memory footprint by over 50% improving the performance on less capable devices  
+
+
+### Follow up and feedback
+Contact the author at: jim@starluna.com
+
