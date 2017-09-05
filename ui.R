@@ -1,11 +1,9 @@
-
+## ui.R for NWPT
 
 library(shiny)
 
-# Define UI for application that draws a histogram
+# Define the layout for the NWPT
 shinyUI(fluidPage(
-  
-  # Application title
   titlePanel("Next Word Prediction Tool"),
   
     sidebarPanel(
