@@ -1,3 +1,5 @@
+## server.R for the NWPT
+## embedded sbo as some start up race on shinyapps.io when using source()
 
 library(data.table)
 library(shiny)
@@ -8,6 +10,7 @@ load(file = "ngrams.RData")
 
 source("sampleCorpus.R")
 
+# read in text for the informational tabs
 otxt <- readselect("otab.txt")
 utxt <- readselect("utab.txt")
 
@@ -70,6 +73,7 @@ sbo <- function(wd) {
         } 
         
         lambda <- 1
+        res <- ut[order(-freq)][1:10, .(t4, score = (freq/nrow(ut)*lambda))]
         
         if (ntok == 3) { # predict from quadgrams
                 res <- qt[t1 == wdlist[1] &
@@ -97,8 +101,7 @@ sbo <- function(wd) {
                 if (nrow(res) > 0) {
                         lfreq <- bt[t3 == wdlist[1] & t4 == wdlist[2]]$freq
                         res[, c("score"):= (score/lfreq*lambda)]
-                        print("found match in tt")
-                        print(res)
+                        #print("found match in tt")
                 } else {
                         # decrement the count, shift the tokens and drop thru to bigram search
                         ntok <- 1
