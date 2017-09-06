@@ -30,3 +30,18 @@ Downloaded from http://www.ngrams.info on August 4, 2017.
 
 #### COCO_process.R - read and format n-grams
 
+## Directory Ttools
+Test tools for the NWPT
+
+#### testtools.R - simple test scaffold for testing prediction algos
+
+## main branch director (NWPT)
+
+#### Capstone_overview.Rpres - 5 slide overview of project
+#### README.md - this file
+#### otab.txt - overview tab content for inclusion in shiny app
+#### sampleCorpus.R - tools for cleaning inputs and reading files
+#### sbo.R - Simple backoff code
+#### server.R - server backend for shiny applet
+#### ui.R - UI definition for shiny applet
+#### utab.txt - usage tab content for inclusion in shiny app
