@@ -24,6 +24,7 @@ sbo <- function(wd) {
         } 
         
         lambda <- 1
+        res <- ut[order(-freq)][1:10, .(t4, score = (freq/nrow(ut)*lambda))] 
        
         if (ntok == 3) { # predict from quadgrams
                 res <- qt[t1 == wdlist[1] &
