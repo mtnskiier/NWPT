@@ -1,5 +1,16 @@
-# NWPT
-Next Word Prediction Tool - JHU Capstone
+# NWPT - Next Word Prediction Tool - JHU Capstone
+The next word prediction tool is a natural language processing model built to predict the next work in written English. The basic algorithm builds a model from a large corpus of blobs, twitter, and news articles - provided by SwiftKey. The model is build from counting the frequency of occurrence for n-grams (where n is 1-4) and then using a Simple Back-off algorithm to try and predict phrases from the higher order n-grams down through the lowest order n-grams. 
+
+## main branch directory (NWPT)
+
+#### Capstone_overview.Rpres - 5 slide overview of project
+#### README.md - this file
+#### otab.txt - overview tab content for inclusion in shiny app
+#### sampleCorpus.R - tools for cleaning inputs and reading files
+#### sbo.R - Simple back-off code
+#### server.R - server backend for shiny app-let
+#### ui.R - UI definition for shiny app-let
+#### utab.txt - usage tab content for inclusion in shiny app
 
 ## Directory CC
 This directory contains source files created for the Cleaning and Conditioning of the corpus. 
@@ -35,13 +46,3 @@ Test tools for the NWPT
 
 #### testtools.R - simple test scaffold for testing prediction algos
 
-## main branch director (NWPT)
-
-#### Capstone_overview.Rpres - 5 slide overview of project
-#### README.md - this file
-#### otab.txt - overview tab content for inclusion in shiny app
-#### sampleCorpus.R - tools for cleaning inputs and reading files
-#### sbo.R - Simple backoff code
-#### server.R - server backend for shiny applet
-#### ui.R - UI definition for shiny applet
-#### utab.txt - usage tab content for inclusion in shiny app
