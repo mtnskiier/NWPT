@@ -6,6 +6,7 @@ The next word prediction tool is a natural language processing model built to pr
 #### Capstone_overview.Rpres - 5 slide overview of project
 #### README.md - this file
 #### otab.txt - overview tab content for inclusion in shiny app
+#### mkcorpus.Rmd - high-level scripting for creating the model
 #### sampleCorpus.R - tools for cleaning inputs and reading files
 #### sbo.R - Simple back-off code
 #### server.R - server backend for shiny app-let
