@@ -17,7 +17,7 @@ The intent of this document is to illustrate the use of the toolset in the NWPT 
 
 Apply the basic cleaning routine to the corpus and save the contents in the local file system with the "./clean" prefix. Following the cleaning, dice the corpus into "train", "test", and "valid" data sets, each representing (70%, 20%, 10% - respectively) of the total corpus. dicecorpus() also divides the "train" dataset into 5 chunks per data type - yielding 15 files to process to build the model. This division of the input data is done to reduce the memory footprint during the n-gram creation.
 
-```{r getclean, cache=TRUE, eval=FALSE}
+```{r getclean, cache=TRUE, eval=TRUE}
 source("sampleCorpus.R")
 source("CC/n-grams.R")
 getclean()
@@ -28,7 +28,7 @@ dicecorpus()
 
 Process the "./train*" portion of the corpus and make the n-grams. Strip off the single occurrence n-grams. The make the n-gram a set of named tokens. Save the resulting set of n-grams.
 
-```{r mkngrams, cache=TRUE, eval=FALSE}
+```{r mkngrams, cache=TRUE, eval=TRUE}
 udt <- trainProcess(1)
 print("Unigrams complete")
 bdt <- trainProcess(2)
@@ -40,18 +40,20 @@ print("Quadgrams complete")
 
 # strip the single occurrence n-grams and tokenize the output
 source("CC/mkmodel.R")
-ut <- unimodel(udt$freq > 1])
+ut <- unimodel(udt[freq > 1])
 udt <- NULL
 
-bt <- bimodel(bdt$freq > 1])
+bt <- bimodel(bdt[freq > 1])
 bdt <- NULL
 
-tt <- trimodel(tdt$freq > 1])
+tt <- trimodel(tdt[freq > 1])
 tdt <- NULL
 
-qt <- quadmodel(qdt$freq > 1])
+qt <- quadmodel(qdt[freq > 1])
 qdt <- NULL
 gc()
+tables()
 
 save(ut, bt, tt, qt, file="ngrams.RData")
+
 ```
