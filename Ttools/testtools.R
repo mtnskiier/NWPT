@@ -23,7 +23,7 @@ testdrv <- function(sentl) {
          x <- x[!is.na(x$nxt), ]
         
         for (i in 1:nrow(x)) {
-                # select the search algo: Csbo and sbo
+                # select the search algo: Csbo and sbo, isbo
                 guess <- sbo(x$words[i])
                 x$p1[i]<-guess$t4[1]
                 x$p2[i]<-guess$t4[2]
